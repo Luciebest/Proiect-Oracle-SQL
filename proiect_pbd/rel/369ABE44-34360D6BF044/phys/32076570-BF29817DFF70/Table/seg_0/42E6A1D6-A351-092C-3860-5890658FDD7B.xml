@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Clienti" directorySegmentName="seg_0" id="42E6A1D6-A351-092C-3860-5890658FDD7B">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="nume_client" id="152D6735-835A-BD89-6618-058F6BCE2401">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_client" id="6D28E7EB-AF8B-1A80-DD50-2208342004D6">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="telefon" id="E91D8B75-C958-3951-B163-36878DD6D264">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="email" id="F1711017-47AD-CCF2-DF22-7D25EC482BEC">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Clienti_PK" id="DB9476B7-3AF3-EB84-863A-0F714105FFA5">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

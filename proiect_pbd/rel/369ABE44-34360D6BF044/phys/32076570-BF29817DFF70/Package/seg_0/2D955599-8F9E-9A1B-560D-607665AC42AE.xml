@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="test_package" directorySegmentName="seg_0" id="2D955599-8F9E-9A1B-560D-607665AC42AE">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-28 18:22:46 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<source>CREATE OR REPLACE PACKAGE test_package 
+IS 
+
+    PROCEDURE process_rezervare;
+    PROCEDURE attempt_rezervare(
+    v_numar_locuri IN rezervari.numar_locuri%TYPE,
+    v_id_programare IN rezervari.id_programare%TYPE,
+    v_id_client IN rezervari.id_client%TYPE);
+    
+END;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="test_package" id="2D955599-8F9E-9A1B-560D-607665AC42AE">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-28 18:41:40 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<source>create or replace package body test_package
+is 
+PROCEDURE process_rezervare AS
+-- Declaram variabila pentru id-ul unei rezervari
+    v_id_rezervare rezervari.id_rezervare%type;
+BEGIN
+    -- Selectam id-ul maxim curent din tabelul rezervari
+    SELECT NVL(MAX(id_rezervare), 0) INTO v_id_rezervare FROM rezervari;
+
+    -- Incrementam acest id cu 1 pentru a obtine id-ul unei noi rezervari
+    v_id_rezervare := v_id_rezervare + 1;
+    
+    -- Afisam situatia tabelelor inainte de inserare
+    DBMS_OUTPUT.PUT_LINE(&apos;Before insert:&apos;);
+    FOR r IN (SELECT * FROM programari) LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;ID: &apos; || r.id_programare || &apos;, Locuri ramase: &apos; || r.locuri_ramase);
+    END LOOP;
+    FOR r IN (SELECT * FROM rezervari) LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;ID: &apos; || r.id_rezervare || &apos;, Numar locuri: &apos; || r.numar_locuri);
+    END LOOP;
+
+   -- Facem o inserare de rezervare
+    insert_package.insert_rezervare(2, 1, 1);
+
+    -- Afisam situatia tabelelor dupa inserare
+    DBMS_OUTPUT.PUT_LINE(&apos;After insert:&apos;);
+    FOR r IN (SELECT * FROM programari) LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;ID: &apos; || r.id_programare || &apos;, Locuri ramase: &apos; || r.locuri_ramase);
+    END LOOP;
+    FOR r IN (SELECT * FROM rezervari) LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;ID: &apos; || r.id_rezervare || &apos;, Numar locuri: &apos; || r.numar_locuri);
+    END LOOP;
+
+    -- Facem o operatie de update pe rezervare
+    UPDATE rezervari SET numar_locuri = 5 WHERE id_rezervare = v_id_rezervare;
+
+    -- Afisam situatia tabelelor dupa operatia de update
+    DBMS_OUTPUT.PUT_LINE(&apos;After update:&apos;);
+    FOR r IN (SELECT * FROM programari) LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;ID: &apos; || r.id_programare || &apos;, Locuri ramase: &apos; || r.locuri_ramase);
+    END LOOP;
+    FOR r IN (SELECT * FROM rezervari) LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;ID: &apos; || r.id_rezervare || &apos;, Numar locuri: &apos; || r.numar_locuri);
+    END LOOP;
+
+    -- Stergem rezervarea pe care tocmai am inserat-o
+    DELETE rezervari WHERE id_rezervare = v_id_rezervare;
+
+    -- Afisam situatia tabelelor dupa operatia de stergere
+    DBMS_OUTPUT.PUT_LINE(&apos;After delete:&apos;);
+    FOR r IN (SELECT * FROM programari) LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;ID: &apos; || r.id_programare || &apos;, Locuri ramase: &apos; || r.locuri_ramase);
+    END LOOP;
+    FOR r IN (SELECT * FROM rezervari) LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;ID: &apos; || r.id_rezervare || &apos;, Numar locuri: &apos; || r.numar_locuri);
+    END LOOP;
+END process_rezervare;
+
+PROCEDURE attempt_rezervare(
+    v_numar_locuri IN rezervari.numar_locuri%TYPE,
+    v_id_programare IN rezervari.id_programare%TYPE,
+    v_id_client IN rezervari.id_client%TYPE)
+IS
+    v_locuri_ramase programari.locuri_ramase%TYPE;
+BEGIN
+    
+    SELECT locuri_ramase INTO v_locuri_ramase FROM programari WHERE id_programare = v_id_programare;
+
+    -- Verifica daca locurile ramase sunt suficiente pt rezervare
+    IF v_locuri_ramase &gt;= v_numar_locuri THEN
+        -- Fac rezervarea
+        insert_package.insert_rezervare(v_numar_locuri, v_id_programare, v_id_client);
+
+       -- Nu mai facem update la locurile ramase, deoarece triggerul se va ocupa de asta
+    ELSE
+        -- Output mesaj zicand ca rezervarea nu poate fi facuta daca nu sunt suficiente locuri ramase in tabela programari
+        DBMS_OUTPUT.PUT_LINE(&apos;Nu putem face rezervarea: nu sunt suficiente locuri ramase in programarea filmului dorit.&apos;);
+    END IF;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        -- Output mesaj zicand ca rezervarea nu poate fi facuta daca id-ul programarii nu exista in tabela programari
+        DBMS_OUTPUT.PUT_LINE(&apos;Nu putem face rezervarea: programarea nu exista.&apos;);
+END attempt_rezervare;
+end;</source>
+</body>
+</PackageOracle>

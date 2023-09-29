@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="trg_programari_data_incepere" directorySegmentName="seg_0" id="AA710F6A-E94A-23EC-78C2-53FEC7235458">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:53 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<actions>INSERT, UPDATE</actions>
+<body><![CDATA[BEGIN
+IF( :new.data_incepere <= SYSDATE )
+THEN
+RAISE_APPLICATION_ERROR( -20001,
+'Data invalida: ' || TO_CHAR( :new.data_incepere, 'DD.MM.YYYY HH24:MI:SS' ) || ' trebuie sa fie mai mare decat data curenta.' );
+END IF;
+END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<table>B9450DF0-589F-2F55-BA1F-39673128E312</table>
+</TriggerOraclev10g>

@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Programari" directorySegmentName="seg_0" id="B9450DF0-589F-2F55-BA1F-39673128E312">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="data_finalizare" id="02C5EA6F-C15C-EFA5-3429-6F76CC395796">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="locuri_ramase" id="876EF0DE-94D3-8A81-E872-4785EC160323">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_programare" id="914837B4-8F67-AF4F-DE2B-1407D41D9131">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="data_incepere" id="BCFA2425-EF34-70E2-8E9F-A2252DA37213">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_film" id="DB6F789A-2DA6-2B88-A68B-87DE679EE970">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="Programari_Filme_FK" id="9777BCB7-D520-21E5-3D35-949F7BA3FEA8">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Programari_PK" id="B6E05522-A6F0-504C-83F5-4D1FDBCD5D98">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

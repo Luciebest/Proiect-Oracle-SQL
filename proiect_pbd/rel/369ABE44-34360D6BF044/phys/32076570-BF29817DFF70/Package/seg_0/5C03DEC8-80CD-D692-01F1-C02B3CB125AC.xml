@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="insert_package" directorySegmentName="seg_0" id="5C03DEC8-80CD-D692-01F1-C02B3CB125AC">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-27 21:01:50 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<source>create or replace package insert_package 
+is 
+procedure insert_client(v_nume_client in clienti.nume_client%type, v_telefon in clienti.telefon%type, v_email in clienti.email%type);
+procedure insert_film(v_nume_film in filme.nume_film%type, v_durata in filme.durata%type, v_pret in filme.pret%type);
+procedure insert_detaliu_film(v_an_aparitie in detalii_film.an_aparitie%type, v_regizor in detalii_film.regizor%type,v_gen in detalii_film.gen%type, v_id_film in filme.id_film%type);
+procedure insert_rezervare(v_numar_locuri in rezervari.numar_locuri%type, v_id_programare in rezervari.id_programare%type,v_id_client in rezervari.id_client%type);
+procedure insert_programare(v_data_incepere in programari.data_incepere%type, v_data_finalizare in programari.data_finalizare%type,v_id_film in programari.id_film%type, v_locuri_ramase in programari.locuri_ramase%type);
+end;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="insert_package" id="5C03DEC8-80CD-D692-01F1-C02B3CB125AC">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-27 21:02:52 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<source>create or replace package body insert_package
+is 
+procedure insert_detaliu_film
+(v_an_aparitie in detalii_film.an_aparitie%type, v_regizor in detalii_film.regizor%type,v_gen in detalii_film.gen%type, v_id_film in filme.id_film%type)
+is
+begin 
+insert into detalii_film values (v_an_aparitie,v_regizor,v_gen,v_id_film);
+end insert_detaliu_film;
+
+procedure insert_rezervare
+(v_numar_locuri in rezervari.numar_locuri%type, v_id_programare in rezervari.id_programare%type,v_id_client in rezervari.id_client%type)
+is
+begin 
+insert into rezervari values (null,v_numar_locuri,v_id_programare,v_id_client);
+end insert_rezervare;
+
+procedure insert_client
+(v_nume_client in clienti.nume_client%type, v_telefon in clienti.telefon%type, v_email in clienti.email%type)
+is
+begin 
+insert into clienti values (null, v_nume_client, v_telefon, v_email);
+end insert_client;
+
+procedure insert_programare
+(v_data_incepere in programari.data_incepere%type, v_data_finalizare in programari.data_finalizare%type,v_id_film in programari.id_film%type, v_locuri_ramase in programari.locuri_ramase%type)
+is
+begin 
+insert into programari values (null,v_data_incepere, v_data_finalizare, v_id_film, v_locuri_ramase);
+end insert_programare;
+
+procedure insert_film
+(v_nume_film in filme.nume_film%type, v_durata in filme.durata%type, v_pret in filme.pret%type)
+is
+begin 
+insert into filme (nume_film, durata, pret) values (v_nume_film, v_durata, v_pret);
+end insert_film;
+end;</source>
+</body>
+</PackageOracle>

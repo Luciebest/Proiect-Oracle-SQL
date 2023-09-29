@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="print_package" directorySegmentName="seg_0" id="B850D942-71E8-F560-5617-A59FBDA2A844">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-28 16:28:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<source>CREATE OR REPLACE PACKAGE print_package 
+IS 
+    PROCEDURE print_film;
+    PROCEDURE print_detaliu_film;
+    PROCEDURE print_client;
+    PROCEDURE print_programare;
+    PROCEDURE print_rezervare;
+END;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="print_package" id="B850D942-71E8-F560-5617-A59FBDA2A844">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-28 16:28:52 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<source>CREATE OR REPLACE PACKAGE BODY print_package 
+IS 
+PROCEDURE print_film IS
+        CURSOR c IS SELECT * FROM filme;
+    BEGIN
+        FOR r IN c LOOP
+            DBMS_OUTPUT.PUT_LINE(&apos;Film ID: &apos; || r.id_film || &apos;, Nume film: &apos; || r.nume_film || &apos;, Durata: &apos; || r.durata || &apos;, Pret: &apos; || r.pret);
+        END LOOP;
+    END print_film;
+
+PROCEDURE print_detaliu_film IS
+    CURSOR c IS SELECT * FROM detalii_film;
+BEGIN
+    FOR r IN c LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;Detaliu_film ID: &apos; || r.filme_id_film || &apos;, An aparitie: &apos; || r.an_aparitie || &apos;, Regizor: &apos; || r.regizor || &apos;, Gen: &apos; || r.gen);
+    END LOOP;
+END print_detaliu_film;
+
+
+PROCEDURE print_client IS
+    CURSOR c IS SELECT * FROM clienti;
+BEGIN
+    FOR r IN c LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;Client ID: &apos; || r.id_client || &apos;, Nume client: &apos; || r.nume_client || &apos;, Telefon: &apos; || r.telefon || &apos;, Email: &apos; || r.email);
+    END LOOP;
+END print_client;
+
+PROCEDURE print_programare IS
+    CURSOR c IS SELECT * FROM programari;
+BEGIN
+    FOR r IN c LOOP
+         DBMS_OUTPUT.PUT_LINE(&apos;Programare ID: &apos; || r.id_programare || &apos;, Data incepere: &apos; || TO_CHAR(r.data_incepere, &apos;YYYY-MM-DD HH24:MI&apos;) || &apos;, Data finalizare: &apos; || TO_CHAR(r.data_finalizare, &apos;YYYY-MM-DD HH24:MI&apos;) || &apos;, Film ID: &apos; || r.id_film || &apos;, Locuri ramase: &apos; || r.locuri_ramase);
+        --DBMS_OUTPUT.PUT_LINE(&apos;Programare ID: &apos; || r.id_programare || &apos;, Data incepere: &apos; || r.data_incepere || &apos;, Data finalizare: &apos; || r.data_finalizare || &apos;, Film ID: &apos; || r.id_film || &apos;, Locuri ramase: &apos; || r.locuri_ramase);
+    END LOOP;
+END print_programare;
+
+PROCEDURE print_rezervare IS
+    CURSOR c IS SELECT * FROM rezervari;
+BEGIN
+    FOR r IN c LOOP
+        DBMS_OUTPUT.PUT_LINE(&apos;Rezervare ID: &apos; || r.id_rezervare || &apos;, Numar locuri: &apos; || r.numar_locuri || &apos;, Programare ID: &apos; || r.id_programare || &apos;, Client ID: &apos; || r.id_client);
+    END LOOP;
+END print_rezervare;
+
+end;</source>
+</body>
+</PackageOracle>

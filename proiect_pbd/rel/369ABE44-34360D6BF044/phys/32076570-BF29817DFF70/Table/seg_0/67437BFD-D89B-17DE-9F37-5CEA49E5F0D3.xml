@@ -1,0 +1,41 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Filme" directorySegmentName="seg_0" id="67437BFD-D89B-17DE-9F37-5CEA49E5F0D3">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="durata" id="010B4FD2-4E68-97DB-E025-E0DAA653ABFA">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="pret" id="1BDBC3C2-8888-99AC-C031-70C7FCC642C4">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="nume_film" id="8C819C09-5AA3-17E5-6638-327E89AAEB3A">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_film" id="A6F2BBBF-B50F-569B-464F-C7C445A13594">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Filme_PK" id="4F8FB050-BA67-524F-1E74-01F3BE76880D">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

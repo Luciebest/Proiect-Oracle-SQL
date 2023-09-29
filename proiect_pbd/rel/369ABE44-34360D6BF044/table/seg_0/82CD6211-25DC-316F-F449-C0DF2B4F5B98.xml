@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="82CD6211-25DC-316F-F449-C0DF2B4F5B98" name="Rezervari">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:17:19 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<ordsAlias>table_10</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_rezervare" id="81855795-54CC-644F-C2D1-457CAA952C50">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:17:52 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numar_locuri" id="9418B1F7-A847-87AA-F984-BA5DAD1CD4EE">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:18:21 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<constraintName>rezervari_numar_locuri_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="numar_locuri&gt;=1"/>
+</checkConstraint>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_programare" id="5B3FAD6C-6AC3-F86B-E3A8-8AD3BF34DC28">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:18:53 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="63CCC3DC-B2A9-E9E2-B1CC-BAB196726770" referredColumn="914837B4-8F67-AF4F-DE2B-1407D41D9131"/>
+</associations>
+</Column>
+<Column name="id_client" id="8EA06745-C954-24C6-42B0-B419C5E20FF5">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:23:37 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D08A9A54-136C-608E-66F1-A5BD4B63E8CC" referredColumn="6D28E7EB-AF8B-1A80-DD50-2208342004D6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="47D486BA-08E1-9E4A-65E0-E0BE36FEFB5E" name="Rezervari_PK">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:17:52 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="81855795-54CC-644F-C2D1-457CAA952C50"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="90787630-3E9C-4467-61B4-421A7FE368F0" name="Rezervari_Programari_FK">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:19:07 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B3FAD6C-6AC3-F86B-E3A8-8AD3BF34DC28"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="92DE34B2-20D4-054F-D7A5-1CCE86FDC6FE" name="Rezervari_Clienti_FK">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:23:52 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8EA06745-C954-24C6-42B0-B419C5E20FF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

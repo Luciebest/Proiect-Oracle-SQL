@@ -1,0 +1,47 @@
+drop table clienti;
+drop table detalii_film;
+drop table filme;
+drop table programari; 
+drop table rezervari; 
+
+drop sequence clienti_id_client_seq;
+drop sequence detalii_film_id_film_seq;
+drop sequence filme_id_film_seq;
+drop sequence programari_id_programare_seq;
+drop sequence rezervari_id_rezervare_seq;
+
+drop package delete_package;
+drop package insert_package;
+drop package print_package;
+drop package test_package;
+drop package update_package;
+
+drop procedure attempt_rezervare;
+drop procedure process_rezervare;
+
+drop procedure delete_client;
+drop procedure delete_film;
+drop procedure delete_detaliu_film;
+drop procedure delete_rezervare;
+drop procedure delete_programare;
+
+drop procedure update_client;
+drop procedure update_film;
+drop procedure update_detaliu_film;
+drop procedure update_rezervare;
+drop procedure update_programare;
+
+
+drop procedure print_client;
+drop procedure print_film;
+drop procedure print_detaliu_film;
+drop procedure print_rezervare;
+drop procedure print_programare;
+
+drop procedure insert_client;
+drop procedure insert_film;
+drop procedure insert_detaliu_film;
+drop procedure insert_rezervare;
+drop procedure insert_programare;
+
+

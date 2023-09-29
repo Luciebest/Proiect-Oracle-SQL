@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B9450DF0-589F-2F55-BA1F-39673128E312" name="Programari">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:05:16 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_programare" id="914837B4-8F67-AF4F-DE2B-1407D41D9131">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:08:45 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_incepere" id="BCFA2425-EF34-70E2-8E9F-A2252DA37213">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:09:27 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_finalizare" id="02C5EA6F-C15C-EFA5-3429-6F76CC395796">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:10:43 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_film" id="DB6F789A-2DA6-2B88-A68B-87DE679EE970">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:15:26 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D4F776E4-C194-B378-7B11-3D1C5C8B7410" referredColumn="A6F2BBBF-B50F-569B-464F-C7C445A13594"/>
+</associations>
+</Column>
+<Column name="locuri_ramase" id="876EF0DE-94D3-8A81-E872-4785EC160323">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:04:22 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<constraintName>programari_locuri_ramase_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="locuri_ramase&gt;=0"/>
+</checkConstraint>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B6E05522-A6F0-504C-83F5-4D1FDBCD5D98" name="Programari_PK">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:08:45 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="914837B4-8F67-AF4F-DE2B-1407D41D9131"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9777BCB7-D520-21E5-3D35-949F7BA3FEA8" name="Programari_Filme_FK">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:15:26 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DB6F789A-2DA6-2B88-A68B-87DE679EE970"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

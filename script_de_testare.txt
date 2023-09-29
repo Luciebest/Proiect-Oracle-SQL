@@ -1,0 +1,156 @@
+--INSERT
+
+begin
+insert_package.insert_client('Lucia Mertic', '0760558400', 'lucia_mertic@gmail.com');
+end;
+begin
+insert_package.insert_film('Boss',120,22);
+end;
+begin
+insert_package.insert_detaliu_film(2021, 'Bogdan Mirica','drama', 1);
+end;
+begin
+insert_package.insert_programare(to_date('2022-02-26 23:00','YYYY-MM-DD HH24:MI'),to_date('2022-02-27 01:00','YYYY-MM-DD HH24:MI'), 1, 100);
+end;
+begin
+insert_package.insert_rezervare(3, 1,1);
+end;
+
+
+
+
+begin
+insert_package.insert_client('Marian Popescu', '0760558444', 'marian.popescu@gmail.com');
+end;
+begin
+insert_package.insert_film('Little miss sunshine',122,20);
+end;
+begin
+insert_package.insert_detaliu_film(2007, 'Jonathan Dayton','comedie', 2);
+end;
+begin
+insert_package.insert_programare(to_date('2023-07-20 21:00','YYYY-MM-DD HH24:MI'),to_date('2023-07-20 23:02','YYYY-MM-DD HH24:MI'), 2, 100);
+end;
+begin
+insert_package.insert_rezervare(5, 2,2);
+end;
+
+
+begin
+insert_package.insert_client('Adrian Vasilescu', '0760555555', 'adi.vasilescu@gmail.com');
+end;
+begin
+insert_package.insert_film('Reservoir Dogs',130,40);
+end;
+begin
+insert_package.insert_detaliu_film(1992, 'Quentin Tarantino','thriller', 3);
+end;
+begin
+insert_package.insert_programare(to_date('2023-09-19 20:00','YYYY-MM-DD HH24:MI'),to_date('2023-09-19 22:10','YYYY-MM-DD HH24:MI'), 3, 100);
+end;
+begin
+insert_package.insert_rezervare(6, 3,3);
+end;
+
+
+
+
+begin
+insert_package.insert_client('Raluca Tincu', '0766668444', 'raluca.tincu@gmail.com');
+end;
+begin
+insert_package.insert_film('Manchester by the Sea',110,29);
+end;
+begin
+insert_package.insert_detaliu_film(2016, 'Kenneth Lonergan','drama', 4);
+end;
+begin
+insert_package.insert_programare(to_date('2023-10-10 18:00','YYYY-MM-DD HH24:MI'),to_date('2023-10-10 19:50','YYYY-MM-DD HH24:MI'), 4, 100);
+end;
+begin
+insert_package.insert_rezervare(7, 4,4);
+end;
+
+
+
+--UPDATE
+
+
+begin
+update_package.update_client(1, 'Updated Client', '0999888777', 'updated.client@email.com');
+end;
+begin
+update_package.update_film(1, 'Updated Film Name', 150, 80);
+end;
+begin
+update_package.update_detaliu_film(1, 1993, 'Updated Director', 'SF');
+end;
+begin
+update_package.update_programare(1, TO_DATE('2023-11-01 19:30','YYYY-MM-DD HH24:MI'), TO_DATE('2023-11-01 22:00','YYYY-MM-DD HH24:MI'), 1, 99);
+end;
+begin
+update_package.update_rezervare(1, 8, 1, 1);
+end;
+
+
+set serveroutput on;
+--PRINT
+
+begin
+print_package.print_client;
+end;
+begin
+print_package.print_film;
+end;
+begin
+print_package.print_detaliu_film;
+end;
+begin
+print_package.print_programare;
+end;
+begin
+print_package.print_rezervare;
+end;
+
+
+--DELETE
+
+begin
+delete_package.delete_client(4);
+end;
+begin
+delete_package.delete_detaliu_film(4);
+end;
+begin
+delete_package.delete_film(4);
+end;
+begin
+delete_package.delete_rezervare(4);
+end;
+begin
+delete_package.delete_programare(4);
+end;
+
+
+--TEST
+
+begin
+    test_package.attempt_rezervare(2, 3, 3);
+end;
+
+begin
+	print_package.print_programare;
+end;
+
+begin
+    test_package.attempt_rezervare(99, 1, 1);
+end;
+
+begin
+	test_package.attempt_rezervare(3, 999999, 1);
+end;
+
+
+begin
+   test_package.process_rezervare;
+end;

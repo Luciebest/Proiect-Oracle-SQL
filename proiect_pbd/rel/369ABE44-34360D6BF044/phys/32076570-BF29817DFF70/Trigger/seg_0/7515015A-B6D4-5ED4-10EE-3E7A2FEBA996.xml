@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="trigger_locuri_disponibile" directorySegmentName="seg_0" id="7515015A-B6D4-5ED4-10EE-3E7A2FEBA996">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-27 21:31:05 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<actions>INSERT, UPDATE, DELETE</actions>
+<body><![CDATA[declare
+v_locuri_ramase programari.locuri_ramase%type;
+v_dif_update programari.locuri_ramase%type;
+begin 
+if deleting then
+    update programari set locuri_ramase=locuri_ramase+:old.numar_locuri
+    where id_programare=:old.id_programare;
+elsif inserting then
+    select locuri_ramase into v_locuri_ramase from programari where id_programare=:new.id_programare;
+    if v_locuri_ramase>:new.numar_locuri then 
+        update programari set locuri_ramase=locuri_ramase-:new.numar_locuri
+        where id_programare=:new.id_programare;
+    end if;
+else
+    v_dif_update:=:new.numar_locuri-:old.numar_locuri;
+    select locuri_ramase into v_locuri_ramase from programari where id_programare=:new.id_programare;
+    if v_locuri_ramase>v_dif_update then 
+        update programari set locuri_ramase=locuri_ramase-v_dif_update
+        where id_programare=:new.id_programare;
+    end if;
+    
+end if;
+end;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<table>82CD6211-25DC-316F-F449-C0DF2B4F5B98</table>
+</TriggerOraclev10g>

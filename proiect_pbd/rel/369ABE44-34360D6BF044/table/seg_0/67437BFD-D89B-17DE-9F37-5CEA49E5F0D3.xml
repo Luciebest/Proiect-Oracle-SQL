@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="67437BFD-D89B-17DE-9F37-5CEA49E5F0D3" name="Filme">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 10:53:10 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_film" id="A6F2BBBF-B50F-569B-464F-C7C445A13594">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 10:54:56 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nume_film" id="8C819C09-5AA3-17E5-6638-327E89AAEB3A">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 10:55:58 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="durata" id="010B4FD2-4E68-97DB-E025-E0DAA653ABFA">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 10:57:42 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<constraintName>filme_durata_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="durata&gt;0"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pret" id="1BDBC3C2-8888-99AC-C031-70C7FCC642C4">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 10:58:47 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<constraintName>filme_pret_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT021</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="pret&gt;0"/>
+</checkConstraint>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4F8FB050-BA67-524F-1E74-01F3BE76880D" name="Filme_PK">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 10:54:56 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6F2BBBF-B50F-569B-464F-C7C445A13594"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

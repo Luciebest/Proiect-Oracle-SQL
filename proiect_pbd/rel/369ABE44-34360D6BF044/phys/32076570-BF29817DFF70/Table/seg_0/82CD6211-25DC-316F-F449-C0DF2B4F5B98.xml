@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Rezervari" directorySegmentName="seg_0" id="82CD6211-25DC-316F-F449-C0DF2B4F5B98">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="id_programare" id="5B3FAD6C-6AC3-F86B-E3A8-8AD3BF34DC28">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_rezervare" id="81855795-54CC-644F-C2D1-457CAA952C50">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id_client" id="8EA06745-C954-24C6-42B0-B419C5E20FF5">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="numar_locuri" id="9418B1F7-A847-87AA-F984-BA5DAD1CD4EE">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="Rezervari_Programari_FK" id="90787630-3E9C-4467-61B4-421A7FE368F0">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="Rezervari_Clienti_FK" id="92DE34B2-20D4-054F-D7A5-1CCE86FDC6FE">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Rezervari_PK" id="47D486BA-08E1-9E4A-65E0-E0BE36FEFB5E">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 12:59:23 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

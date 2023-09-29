@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="63CCC3DC-B2A9-E9E2-B1CC-BAB196726770" containerWithKeyObject="82CD6211-25DC-316F-F449-C0DF2B4F5B98" localFKIndex="90787630-3E9C-4467-61B4-421A7FE368F0" name="Rezervari_Programari_FK">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:19:07 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<referredTableLongName>Programari</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B9450DF0-589F-2F55-BA1F-39673128E312</referredTableID>
+<keyObject>B6E05522-A6F0-504C-83F5-4D1FDBCD5D98</keyObject>
+<referredKeyID>B6E05522-A6F0-504C-83F5-4D1FDBCD5D98</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_programare</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

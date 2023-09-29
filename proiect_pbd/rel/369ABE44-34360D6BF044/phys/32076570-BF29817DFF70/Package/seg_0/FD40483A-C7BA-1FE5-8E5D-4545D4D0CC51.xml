@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="update_package" directorySegmentName="seg_0" id="FD40483A-C7BA-1FE5-8E5D-4545D4D0CC51">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-28 15:56:08 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<source>CREATE OR REPLACE PACKAGE update_package 
+IS 
+    PROCEDURE update_client(v_id_client in clienti.id_client%type, v_nume_client in clienti.nume_client%type, v_telefon in clienti.telefon%type, v_email in clienti.email%type);
+    PROCEDURE update_film(v_id_film in filme.id_film%type, v_nume_film in filme.nume_film%type, v_durata in filme.durata%type, v_pret in filme.pret%type);
+    PROCEDURE update_detaliu_film(v_id_film in filme.id_film%type, v_an_aparitie in detalii_film.an_aparitie%type, v_regizor in detalii_film.regizor%type, v_gen in detalii_film.gen%type);
+    PROCEDURE update_programare(v_id_programare in programari.id_programare%type, v_data_incepere in programari.data_incepere%type, v_data_finalizare in programari.data_finalizare%type, v_id_film in programari.id_film%type, v_locuri_ramase in programari.locuri_ramase%type);
+    PROCEDURE update_rezervare(v_id_rezervare in rezervari.id_rezervare%type, v_numar_locuri in rezervari.numar_locuri%type, v_id_programare in rezervari.id_programare%type, v_id_client in rezervari.id_client%type);
+END;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="update_package" id="FD40483A-C7BA-1FE5-8E5D-4545D4D0CC51">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-28 15:56:36 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<source>CREATE OR REPLACE PACKAGE BODY update_package
+IS 
+
+PROCEDURE update_film(
+    v_id_film IN filme.id_film%TYPE,
+    v_nume_film IN filme.nume_film%TYPE,
+    v_durata IN filme.durata%TYPE,
+    v_pret IN filme.pret%TYPE) IS
+    
+    film_exists NUMBER;
+BEGIN
+    -- Check if a different film with the same name already exists
+    SELECT COUNT(*) INTO film_exists 
+    FROM filme 
+    WHERE nume_film = v_nume_film AND id_film != v_id_film;
+
+    IF film_exists = 0 THEN
+        -- If not, perform the update
+        UPDATE filme 
+        SET nume_film = v_nume_film,
+            durata = v_durata,
+            pret = v_pret
+        WHERE id_film = v_id_film;
+    ELSE
+        -- If yes, output an error message
+        DBMS_OUTPUT.PUT_LINE(&apos;Another film with name &apos; || v_nume_film || &apos; already exists. No update made.&apos;);
+    END IF;
+END update_film;
+
+PROCEDURE update_client
+    (v_id_client in clienti.id_client%type, v_nume_client in clienti.nume_client%type, v_telefon in clienti.telefon%type, v_email in clienti.email%type)
+IS
+BEGIN 
+    UPDATE clienti 
+    SET nume_client = v_nume_client,
+        telefon = v_telefon,
+        email = v_email
+    WHERE id_client = v_id_client;
+END update_client;
+
+PROCEDURE update_detaliu_film
+    (v_id_film in filme.id_film%type, v_an_aparitie in detalii_film.an_aparitie%type, v_regizor in detalii_film.regizor%type, v_gen in detalii_film.gen%type)
+IS
+BEGIN 
+    UPDATE detalii_film
+    SET an_aparitie = v_an_aparitie,
+        regizor = v_regizor,
+        gen = v_gen
+    WHERE filme_id_film = v_id_film;
+END update_detaliu_film;
+
+PROCEDURE update_programare
+    (v_id_programare in programari.id_programare%type, v_data_incepere in programari.data_incepere%type, v_data_finalizare in programari.data_finalizare%type, v_id_film in programari.id_film%type, v_locuri_ramase in programari.locuri_ramase%type)
+IS
+BEGIN 
+    UPDATE programari 
+    SET data_incepere = v_data_incepere,
+        data_finalizare = v_data_finalizare,
+        id_film = v_id_film,
+        locuri_ramase = v_locuri_ramase
+    WHERE id_programare = v_id_programare;
+END update_programare;
+
+
+PROCEDURE update_rezervare
+    (v_id_rezervare in rezervari.id_rezervare%type, v_numar_locuri in rezervari.numar_locuri%type, v_id_programare in rezervari.id_programare%type, v_id_client in rezervari.id_client%type)
+IS
+BEGIN 
+    UPDATE rezervari 
+    SET numar_locuri = v_numar_locuri,
+        id_programare = v_id_programare,
+        id_client = v_id_client
+    WHERE id_rezervare = v_id_rezervare;
+END update_rezervare;
+end;</source>
+</body>
+</PackageOracle>

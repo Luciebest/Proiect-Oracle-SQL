@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="42E6A1D6-A351-092C-3860-5890658FDD7B" name="Clienti">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:20:10 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<ordsAlias>table_11</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_client" id="6D28E7EB-AF8B-1A80-DD50-2208342004D6">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:20:32 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nume_client" id="152D6735-835A-BD89-6618-058F6BCE2401">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:20:56 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefon" id="E91D8B75-C958-3951-B163-36878DD6D264">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:21:27 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<constraintName>clienti_telefon_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="length(telefon)=10"/>
+</checkConstraint>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="F1711017-47AD-CCF2-DF22-7D25EC482BEC">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:21:54 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<constraintName>clienti_email_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="regexp_like(email, &apos;[a-z0-9._%-]+@[a-z0-9._%-]+\.[a-z]{2,4}&apos;)"/>
+</checkConstraint>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DB9476B7-3AF3-EB84-863A-0F714105FFA5" name="Clienti_PK">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:20:32 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6D28E7EB-AF8B-1A80-DD50-2208342004D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

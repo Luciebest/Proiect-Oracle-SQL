@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AF31D6ED-76DD-A3E4-4E2B-E5939725B2F0" name="Detalii_film">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 10:45:12 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="an_aparitie" id="BFE0A498-C55D-D59F-C1E5-CC9BBAD12E70">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 10:49:00 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<constraintName>detalii_film_an_aparitie_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1800</beginValue>
+<endValue>2022</endValue>
+</rangeDef>
+</listOfRanges>
+</Column>
+<Column name="regizor" id="10CCEDFF-EAA0-347D-7697-6C606644378F">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 10:50:13 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gen" id="2044486C-0F61-3AFD-1F08-BA29554675AB">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 10:51:32 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<constraintName>detalii_film_gen_ck</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<listOfValues>
+<valueDef value="SF" description=""/>
+<valueDef value="actiune" description=""/>
+<valueDef value="animatie" description=""/>
+<valueDef value="comedie" description=""/>
+<valueDef value="documentar" description=""/>
+<valueDef value="drama" description=""/>
+<valueDef value="horror" description=""/>
+<valueDef value="mister" description=""/>
+<valueDef value="thriller" description=""/>
+<valueDef value="western" description=""/>
+</listOfValues>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Filme_id_film" id="F429DBB5-9FC7-164E-D55E-710497880F5A">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-27 20:20:27 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="11F21E6C-B097-D393-D17E-FF196C7F8D2A" referredColumn="A6F2BBBF-B50F-569B-464F-C7C445A13594"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BAE01F9B-3FB8-0E55-F482-DC50EEE6C6EB" name="Detalii_film_PK">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-04-21 11:00:03 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F429DBB5-9FC7-164E-D55E-710497880F5A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB0CD0D4-5C7B-3B10-18BB-F2FFFA1FFF84" name="Detalii_film_Filme_FK">
+<createdBy>Lucia</createdBy>
+<createdTime>2023-05-27 20:20:27 UTC</createdTime>
+<ownerDesignName>proiect_pbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F429DBB5-9FC7-164E-D55E-710497880F5A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
